@@ -19,6 +19,9 @@
     <div class="col-lg-4"></div>
     <div class="col-lg-4">
         <p><a href="/categories">Back to category</a></p>
+        <c:if test='${requestScope["create"]!=null}'>
+            <span>${requestScope["create"]}</span>
+        </c:if>
         <form method="post" class="form-group">
             <table class="table" border="1">
                 <tr>

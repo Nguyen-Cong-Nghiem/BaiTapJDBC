@@ -44,6 +44,13 @@
                         </tr>
                     </c:forEach>
                 </table>
+                <form>
+                <%
+                    String username = (String)session.getAttribute("username");
+                    if (username != null) {%>
+                <button class="btn-dark"><a href="/logout?islogout=ok">Logout</a></button>
+                <%}%>
+                </form>
             </form>
         </div>
     </div>

@@ -80,6 +80,7 @@ public class CategoryServlet extends HttpServlet {
             category.setId(id);
             category.setName(name);
             categoryService.update(id, category);
+            request.setAttribute("message","Cap nhat thanh cong");
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/edit.jsp");
             requestDispatcher.forward(request, response);
         } catch (SQLException | IOException | ServletException e) {
@@ -96,6 +97,7 @@ public class CategoryServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        request.setAttribute("create","Create thanh cong");
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/create.jsp");
         try {
             requestDispatcher.forward(request, response);

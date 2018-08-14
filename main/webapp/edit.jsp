@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: DELL
@@ -14,11 +15,15 @@
 </head>
 <body>
 <h1 style="text-align: center">Edit product</h1>
+
 <%--<div class="container">--%>
 <div class="row">
     <div class="col-lg-4"></div>
     <div class="col-lg-4">
         <p><a href="/categories">Back to category</a></p>
+        <c:if test='${requestScope["message"]!=null}'>
+            <span>${requestScope["message"]}</span>
+        </c:if>
         <form method="post" class="form-group">
             <table class="table" border="1">
                 <tr>
